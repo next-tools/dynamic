@@ -1,0 +1,7 @@
+node_modules
+.babelrc
+.eslintrc.js
+.gitignore
+.npmignore
+.prettierrc.yaml
+src*.js
