@@ -4,7 +4,7 @@
   "description": "generate initApollo and useApollo to use in next js",
   "main": "dist.js",
   "scripts": {
-    "build": "npx babel src.js --out-file dist.js --minified && npx babel src-apollo-redux.js --out-file apollo-redux.js --minified"
+    "build": "npx babel src.js --out-file dist.js --minified"
   },
   "repository": {
     "type": "git",
