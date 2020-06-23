@@ -1,9 +1,9 @@
 import regeneratorRuntime from "regenerator-runtime";
 import { default as NextLink } from "next/link";
 
-export default (getEvents, opts = {}) => async (ctx) => {
+export default (getEvents, opts = {}) => async (...args) => {
   const errHandle = opts.errorHandle || "_error";
-  const events = await getEvents(ctx);
+  const events = await getEvents(...args);
   const { setupAppData, setupPageData, onNotFound, handle } = events;
   let appData;
   let pageData;
