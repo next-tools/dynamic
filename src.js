@@ -1,3 +1,4 @@
+import regeneratorRuntime from "regenerator-runtime";
 import { default as NextLink } from "next/link";
 
 export default (getEvents, opts = {}) => async (ctx) => {
