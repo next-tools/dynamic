@@ -103,5 +103,3 @@ There may be situations when you want next js to catch all routes and have a cms
    ```
 
 If you don't want to use `[...args].js` for your route name you can also use the named export `makeDynamicLink` to generate `DynamicLink` with your path as the first and only argument
-
-xc46yeH13hm5UP2JsqSd2xGnZ3UbcSqD
