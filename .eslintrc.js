@@ -19,13 +19,9 @@ module.exports = {
     sourceType: "module",
     allowImportExportEverywhere: true
   },
-  globals: {
-    React: "readonly"
-  },
   plugins: ["react", "react-hooks"],
   rules: {
     "react/prop-types": 0,
-    "react/react-in-jsx-scope": "off",
     "linebreak-style": ["error", "unix"],
     quotes: ["error", "double"],
     semi: ["error", "always"],

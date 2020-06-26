@@ -1,3 +1,4 @@
+import React from "react";
 import regeneratorRuntime from "regenerator-runtime";
 import { default as NextLink } from "next/link";
 
