@@ -5,7 +5,7 @@ import { default as NextLink } from "next/link";
 export default (getEvents, opts = {}) => async (...args) => {
   const errHandle = opts.errorHandle || "_error";
   const events = await getEvents(...args);
-  const { setupAppData, setupPageData, onNotFound, handle } = events;
+  const { setupAppData, setupPageData, onNotFound, handle, ...rest } = events;
   let appData;
   let pageData;
 
@@ -29,7 +29,7 @@ export default (getEvents, opts = {}) => async (...args) => {
     pageData = routePageData;
   }
 
-  return { appData, pageData, handle };
+  return { appData, pageData, handle, ...rest };
 };
 
 export const DynamicLink = function ({ href, uri, base, home, children }) {
