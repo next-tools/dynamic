@@ -1,6 +1,6 @@
 # Next Dynamic
 
-There may be situations when you want next js to catch all routes and have a cms / api determine what all urls are completely dynamically. You can use this module to help you load dynamic components for one dynamic page that catches all routes except for the homepage route.
+There may be situations when you want next js to catch all routes and have a cms / api determine what all urls are completely dynamically. You can use this module to help you load dynamic components for one dynamic page that catches all routes except for the homepage route. Note: The latest version of this module uses the catch all routes functionality only in next js >= 9.5
 
 ## Suggested Usage
 
@@ -55,7 +55,7 @@ There may be situations when you want next js to catch all routes and have a cms
    });
    ```
 
-3. create the file `pages/[...args].js` (the name `...args` matters if you use the named export `DynamicLink`)
+3. create the file `pages/[[...args]].js` (the name `...args` matters if you use the named export `DynamicLink`)
 
    ```js
    import * as routes from "routes/index";
@@ -78,14 +78,7 @@ There may be situations when you want next js to catch all routes and have a cms
    export default Page;
    ```
 
-4. create the file `pages/index.js` since the above file will not catch the homepage route
-
-   ```js
-   export { default } from "./[...args]";
-   export * from "./[...args]";
-   ```
-
-5. since now we have one single route, the next `Link` is useless unless you want to type `href="./[...args]` and `as="real/path"` every single time. This module provides a named export that proxies the next link and writes the href prop for you behind the scenes. You can now use href normally and it will be set to the as prop for you. You can use the prop uri instead of href to reference a path with no leading slash. The uri prop takes precedence over the href prop. If you enter supply any of the following the route will be the homepage. `href="/", uri="", uri="__home__", home={true}`
+4. since now we have one single route, the next `Link` is useless unless you want to type `href="./[[...args]]` and `as="real/path"` every single time. This module provides a named export that proxies the next link and writes the href prop for you behind the scenes. You can now use href normally and it will be set to the as prop for you. You can use the prop uri instead of href to reference a path with no leading slash. The uri prop takes precedence over the href prop. If you enter supply any of the following the route will be the homepage. `href="/", uri="", uri="__home__", home={true}`
 
    ```js
    import { DynamicLink } from "@next-tools/dynamic";
@@ -102,4 +95,4 @@ There may be situations when you want next js to catch all routes and have a cms
    };
    ```
 
-If you don't want to use `[...args].js` for your route name you can also use the named export `makeDynamicLink` to generate `DynamicLink` with your path as the first and only argument
+If you don't want to use `[[...args]].js` for your route name you can also use the named export `makeDynamicLink` to generate `DynamicLink` with your path as the first and only argument

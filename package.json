@@ -1,7 +1,7 @@
 {
   "name": "@next-tools/dynamic",
-  "version": "0.0.6",
-  "description": "generate initApollo and useApollo to use in next js",
+  "version": "0.0.9",
+  "description": "dynamic routing system for next js",
   "main": "dist.js",
   "scripts": {
     "build": "npx babel src.js --out-file dist.js --minified"
@@ -19,7 +19,7 @@
     "next dynamic"
   ],
   "peerDependencies": {
-    "next": "^9.0.0",
+    "next": "^9.5.1",
     "react": "^16.6.0",
     "react-dom": "^16.6.0"
   },

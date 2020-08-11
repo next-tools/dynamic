@@ -33,11 +33,11 @@ export default (getEvents, opts = {}) => async (...args) => {
 };
 
 export const DynamicLink = function ({ href, uri, base, home, children }) {
-  let url = base || "/[...args]";
+  let url = base || "/[[...args]]";
   let asProp = uri ? "/" + uri : href;
 
-  if (href === "/" || uri === "" || uri === "__home__" || home) {
-    return <NextLink href="/">{children}</NextLink>;
+  if (uri === "__home__" || home) {
+    asProp = "/";
   }
 
   return (
