@@ -1,6 +1,6 @@
 {
   "name": "@next-tools/dynamic",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "dynamic routing system for next js",
   "main": "dist.js",
   "scripts": {
@@ -19,9 +19,9 @@
     "next dynamic"
   ],
   "peerDependencies": {
-    "next": "^9.5.1",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "next": ">= 9.5.1",
+    "react": ">= 16.6.0",
+    "react-dom": ">= 16.6.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.5",

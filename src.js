@@ -1,6 +1,5 @@
 import React from "react";
 import regeneratorRuntime from "regenerator-runtime";
-import { default as NextLink } from "next/link";
 
 export default (getEvents, opts = {}) => async (...args) => {
   const errHandle = opts.errorHandle || "_error";
@@ -31,25 +30,6 @@ export default (getEvents, opts = {}) => async (...args) => {
 
   return { appData, pageData, handle, ...rest };
 };
-
-export const DynamicLink = function ({ href, uri, base, home, children }) {
-  let url = base || "/[[...args]]";
-  let asProp = uri ? "/" + uri : href;
-
-  if (uri === "__home__" || home) {
-    asProp = "/";
-  }
-
-  return (
-    <NextLink href={url} as={asProp}>
-      {children}
-    </NextLink>
-  );
-};
-
-export const makeDynamicLink = (base) => (props) => (
-  <DynamicLink {...props} base={base} />
-);
 
 const defaultPromise = async () => ({});
 
